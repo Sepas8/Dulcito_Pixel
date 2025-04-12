@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+header {
+    background-color: #1c1c1c; /* Fondo oscuro */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.filter-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto claro */
+    border: 2px solid #555; /* Bordes grises */
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: #444; /* Fondo más claro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.filter-button:active {
+    background-color: #555; /* Fondo aún más oscuro al hacer clic */
+    transform: translateY(2px); /* Efecto de hundimiento */
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: #2c2c2c; /* Fondo oscuro para las tarjetas */
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    border-radius: 8px;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #fff; /* Título claro */
+}
+
+.product-card .price {
+    font-size: 1.1rem;
+    color: #66ff66; /* Verde brillante */
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    background-color: #f2a900; /* Color de fondo similar al Lego */
+    color: #fff;
+    border: 3px solid #d87c16; /* Bordes con un color más oscuro */
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+}
+
+.product-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card button:active {
+    transform: translateY(2px);
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cart-actions {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+.category-link {
+    color: #66ff66; /* Verde brillante para el enlace */
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.category-link:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+    cursor: pointer;
+}
+
+.category-link:active {
+    color: #e0e0e0; /* Color claro cuando se hace clic */
+}
+.cart-list {
+    background-color: #2c2c2c; /* Fondo oscuro */
+    color: #fff; /* Texto claro */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#cart-items-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart-items-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #333; /* Fondo oscuro para los elementos del carrito */
+    border-radius: 5px;
+}
+
+#cart-items-list li span {
+    font-size: 1rem;
+}
+
+button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+/* Estilos para la sección de pago */
+.payment-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+}
+
+.payment-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.order-summary {
+    flex: 1;
+    min-width: 300px;
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.order-summary h2 {
+    margin-bottom: 1.5rem;
+    color: #f2a900;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+#order-items {
+    margin-bottom: 1.5rem;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #444;
+}
+
+.order-item img {
+    border-radius: 4px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.order-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.order-item p {
+    margin: 0.3rem 0 0;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.order-item span {
+    margin-left: auto;
+    font-weight: bold;
+    color: #66ff66;
+}
+
+.order-totals {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #444;
+}
+
+.order-totals p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    color: #e0e0e0;
+}
+
+.order-totals .total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #f2a900;
+}
+
+.payment-methods {
+    flex: 1;
+    min-width: 300px;
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.payment-methods h2 {
+    margin-bottom: 1.5rem;
+    color: #f2a900;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.payment-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    flex: 1;
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #2c2c2c;
+    border: 2px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option:hover {
+    border-color: #f2a900;
+}
+
+.payment-option.active {
+    border-color: #66ff66;
+    background-color: #1c1c1c;
+    box-shadow: 0 0 10px rgba(102, 255, 102, 0.3);
+}
+
+.payment-option img {
+    margin-bottom: 0.5rem;
+    filter: brightness(0.9);
+}
+
+.payment-option span {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.payment-form {
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #2c2c2c;
+    border: 2px solid #444;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #f2a900;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #66ff66;
+    color: #121212;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.pay-button:hover {
+    background-color: #55ee55;
+    transform: translateY(-2px);
+}
+
+.pay-button:active {
+    transform: translateY(0);
+}
+
+.paypal-button {
+    background-color: #0070ba;
+    color: white;
+}
+
+.paypal-button:hover {
+    background-color: #005ea6;
+}
+
+/* Estilos para el carrito en la sección de pago */
+#cart-items-list li img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .payment-container {
+        flex-direction: column;
+    }
+    
+    .payment-option {
+        min-width: calc(50% - 0.5rem);
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
