@@ -164,7 +164,49 @@ paymentOptions.forEach(option => {
         // Mostrar el formulario correspondiente
         const method = option.getAttribute('data-method');
         paymentForms[method].style.display = 'block';
+
+        // Mostrar mensaje especial para PayPal
+        if (method === 'paypal') {
+            showPaypalRedirectMessage();
+        }
     });
+});
+
+// Función para mostrar mensaje de redirección a PayPal
+function showPaypalRedirectMessage() {
+    // Crear elemento de mensaje si no existe
+    if (!document.getElementById('paypal-redirect-message')) {
+        const message = document.createElement('div');
+        message.id = 'paypal-redirect-message';
+        message.innerHTML = `
+            <div class="redirect-message">
+                <p>Serás redirigido a PayPal para completar tu pago de <strong>$${calculateCartTotal().toLocaleString()}</strong></p>
+                <p>Por favor revisa los detalles de tu compra antes de continuar:</p>
+                <ul id="paypal-summary"></ul>
+            </div>
+        `;
+        paymentForms.paypal.insertBefore(message, paymentForms.paypal.firstChild);
+        
+        // Llenar resumen de compra
+        const summaryList = document.getElementById('paypal-summary');
+        cart.forEach(item => {
+            const product = productData[item.id];
+            const li = document.createElement('li');
+            li.textContent = `${product.name} - ${item.quantity} x $${product.price.toLocaleString()}`;
+            summaryList.appendChild(li);
+        });
+    }
+}
+
+// Modificar el evento del botón de PayPal
+document.querySelector('.paypal-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    // Simular redirección (en producción sería window.location.href = "...")
+    setTimeout(() => {
+        alert('Redirigiendo a PayPal...\n\n¡Gracias por tu compra!');
+        clearCart();
+        paymentSection.style.display = 'none';
+    }, 1500);
 });
 
 // Manejar el envío del formulario de pago con tarjeta
