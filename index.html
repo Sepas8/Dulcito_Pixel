@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dulcito Pixel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h1>Dulcito Pixel</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Carrito (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="filter-section">
+    <button class="filter-button" id="filters">Filtros</button>
+    <select id="category-filter" class="filter-button">
+      <option value="all">Todas las categorías</option>
+      <option value="series">Series</option>
+      <option value="peliculas">Películas</option>
+      <option value="anime">Anime</option>
+    </select>
+  </section>
+
+  <section class="products">
+    <h2>Pines</h2>
+
+    <!-- Producto 1 -->
+    <div class="product-card" data-id="1" data-category="series">
+      <img src="https://i.postimg.cc/QMxzjDRQ/simpson.jpg" alt="Producto 1">
+      <h3>Simpsons Pin combo</h3>
+      <p class="price">$25.000</p>
+      <button class="add-to-cart">Agregar al carrito</button>
+      <p><a href="#" class="category-link" data-category="series">#series</a></p>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="product-card" data-id="2" data-category="peliculas">
+      <img src="https://i.postimg.cc/RF2p1Hqd/snoopy.jpg" alt="Producto 2">
+      <h3>Snoopy</h3>
+      <p class="price">$25.000</p>
+      <button class="add-to-cart">Agregar al carrito</button>
+      <p><a href="#" class="category-link" data-category="peliculas">#peliculas</a></p>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product-card" data-id="3" data-category="anime">
+      <img src="https://i.postimg.cc/GtY7XmyC/rick.jpg" alt="Producto 3">
+      <h3>Rick y Morty Pin</h3>
+      <p class="price">$15.000</p>
+      <button class="add-to-cart">Agregar al carrito</button>
+      <p><a href="#" class="category-link" data-category="anime">#anime</a></p>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product-card" data-id="4" data-category="series">
+      <img src="https://i.postimg.cc/765QTVPb/krusty.jpg" alt="Producto 4">
+      <h3>Krusty Pin</h3>
+      <p class="price">$15.000</p>
+      <button class="add-to-cart">Agregar al carrito</button>
+      <p><a href="#" class="category-link" data-category="series">#series</a></p>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product-card" data-id="5" data-category="peliculas">
+      <img src="https://i.postimg.cc/bvCBJMhK/harry.jpg" alt="Producto 5">
+      <h3>Harry Potter Pin Combo</h3>
+      <p class="price">$30.000</p>
+      <button class="add-to-cart">Agregar al carrito</button>
+      <p><a href="#" class="category-link" data-category="peliculas">#peliculas</a></p>
+    </div>
+  </section>
+
+  <section class="cart-list" id="cart-list">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items-list">
+        <!-- Aquí se llenarán los productos en el carrito -->
+    </ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button id="clear-cart">Vaciar carrito</button>
+    <button id="checkout">Finalizar compra</button>
+  </section>
+
+  <!-- Sección de Pago (oculta inicialmente) -->
+  <section class="payment-section" id="payment-section" style="display: none;">
+    <div class="payment-container">
+      <div class="order-summary">
+        <h2>Resumen de tu Pedido</h2>
+        <div id="order-items">
+          <!-- Los productos del carrito aparecerán aquí -->
+        </div>
+        <div class="order-totals">
+          <p>Subtotal: <span id="order-subtotal">$0</span></p>
+          <p>Envío: <span id="order-shipping">$5.000</span></p>
+          <p class="total">Total: <span id="order-total">$0</span></p>
+        </div>
+      </div>
+      
+      <div class="payment-methods">
+        <h2>Método de Pago</h2>
+        
+        <div class="payment-options">
+          <div class="payment-option active" data-method="credit">
+            <img src="https://cdn-icons-png.flaticon.com/512/179/179457.png" alt="Tarjeta de Crédito" width="40">
+            <span>Tarjeta de Crédito/Débito</span>
+          </div>
+          <div class="payment-option" data-method="paypal">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174861.png" alt="PayPal" width="40">
+            <span>PayPal</span>
+          </div>
+          <div class="payment-option" data-method="transfer">
+            <img src="https://cdn-icons-png.flaticon.com/512/477/477103.png" alt="Transferencia" width="40">
+            <span>Transferencia Bancaria</span>
+          </div>
+        </div>
+        
+        <form class="payment-form" id="credit-card-form">
+          <div class="form-group">
+            <label for="card-number">Número de Tarjeta</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          
+          <div class="form-group">
+            <label for="card-name">Nombre en la Tarjeta</label>
+            <input type="text" id="card-name" placeholder="Nombre Apellido">
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="card-expiry">Fecha de Expiración</label>
+              <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+            </div>
+            
+            <div class="form-group">
+              <label for="card-cvv">CVV</label>
+              <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+            </div>
+          </div>
+          
+          <button type="submit" class="pay-button">Pagar $<span id="pay-amount">0</span></button>
+        </form>
+        
+        <div class="payment-form" id="paypal-form" style="display: none;">
+          <p>Serás redirigido a PayPal para completar tu pago.</p>
+          <button class="pay-button paypal-button">Pagar con PayPal</button>
+        </div>
+        
+        <div class="payment-form" id="transfer-form" style="display: none;">
+          <p>Por favor realiza una transferencia a:</p>
+          <p><strong>Banco:</strong> Bancolombia</p>
+          <p><strong>Cuenta:</strong> 123-456789-01</p>
+          <p><strong></strong> ó</p>
+          <p><strong>Banco:</strong> Nequi</p>
+          <p><strong>Cuenta:</strong> 312-456789-01</p>
+          
+          <p><strong>Titular:</strong> Dulcito Pixel S.A.S.</p>
+          <p><strong>Monto:</strong> $<span id="transfer-amount">0</span></p>
+          <p>Envía el comprobante a info@dulcitopixel.com o al numero de Whatsapp 312-456789-01</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tienda 90's. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
